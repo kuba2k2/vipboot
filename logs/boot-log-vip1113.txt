@@ -1,0 +1,283 @@
+System memory: 512 MB
+Using Slot 1
+Unpacking Image ...Done
+Linux version 2.6.32.59_stm24_0211 (<build_user_removed>@<build_host_removed>) (gcc version 4.7.3 20130514 (GCC) ) #1 PREEMPT <timestamp_removed>
+Booting machvec: vip28x3
+KreaTV VIP28x3/VIP11x3 board initialisation
+STxH205/7 version 2.x
+Kernel command line: console=ttyAS0,115200 mtdparts=stm-nand-bch.0:0x00280000@0x00000000(rbl),0x00F00000@0x00280000(boot),0x06E80000@0x01180000(flash) hom=0x42090000 rblmem=0x00091000@0x42000000 bootdevice=nand bootfiles=fs systemmemsize=524288 rbl=2 rbl_mode=1 rbl_version=2.3.1 sw_version=5.4.3 dbl=1 bnb=1024 rootdisk=m:0x00000000@0x00000000 nwhwconf=device:eth0,hwaddr:xx:xx:xx:xx:xx:xx rbl_cap=1 bt=VIP1113-REV1
+Memory: 502144k/524288k available (2004k kernel code, 664k data, 128k init)
+Console: colour dummy device 80x25
+console [ttyAS0] enabled
+CPU: STxH205
+Unpacking initramfs...
+Freeing initrd memory: 3696k freed
+ONFI flash detected
+ONFI param page 0 valid
+NAND device: Manufacturer ID: 0x2c, Chip ID: 0xf1 (Micron MT29F1G08ABAEAH4)
+Creating 3 MTD partitions on "stm-nand-bch.0":
+0x000000000000-0x000000280000 : "rbl"
+0x000000280000-0x000001180000 : "boot"
+0x000001180000-0x000008000000 : "flash"
+Freeing unused kernel memory: 128k freed
+DBL init started
+DBL version STABLE_FIRMWARE_5.4.3@380102 (dailybuild@invergordon) (sh4-kreatv-linux-uclibc-gcc (GCC) 4.7.3 20130514)# Fri Apr 11 13:02:23 CEST 2014
+Mounting tmpfs
+Mounting procfs
+Mounting sysfs
+Mounting FFS
+UBI: attached mtd2 to ubi0
+UBI: background thread "ubi_bgt0d" started, PID 25
+UBIFS: recovery needed
+UBIFS: recovery completed
+UBIFS: mounted UBI device 0, volume 0, name "flash"
+Initializing HAL
+Verifying system integrity...
+System integrity is intact
+Running on ARRIS VIP1113L with KreaTV Firmware version 5.4.3
+Using Vendor Class Id TeliaSonera_VIP1113
+Using Bootcast Id arris-vip1113 -h 192.168.0.5 -q 27747
+Using SAP Id teliasonera.vip1113
+Initializing video
+Entering video active mode
+No valid splash image in local storage
+DVB is NOT available
+RLE-8 compressed image
+Bootcast download protocol registered
+TFTP download protocol registered
+Local Storage download protocol registered
+SAP download protocol registered
+HTTP download protocol registered
+USB download protocol registered
+Bringing up interface eth0
+Reading link status...
+PHY: 0:01 - Link is Up - 100/Full
+-> Link is up
+Link speed: 100Mbps/Full
+Using DHCP
+Total DHCP timeout is 15 seconds
+IP-Config: eth0 hardware address xx:xx:xx:xx:xx:xx mtu 1500 DHCP
+IP-Config: eth0 complete (from 192.168.0.1):
+ address: 192.168.0.75     broadcast: 192.168.0.255    netmask: 255.255.255.0
+Download parameters:
+  Splash boot order: 363
+  Kernel boot order: 363
+  Bootcast address : 224.2.2.2:22222
+  Sap address      : 224.2.127.254:9875
+  Http address     : image.iptv.telia.se:80
+Loading splash image
+Using Local Storage
+LS: No valid image available
+Using HTTP
+Requesting HTTP metadata
+HTTP: Connection attempt 1 of 3
+Request http://192.168.0.5:27747/arris-vip1113
+Permanent from metadata (to flash): SplashOrder: 6136
+Permanent from metadata (to flash): BootOrder: 36
+Permanent from metadata (to flash): Bootcast: viphttp-sh4 -x arris-vip1113 -s 192.168.0.5 -p 27747
+Permanent from metadata (to flash): BootcastAttempts: 1
+Permanent from metadata (to flash): BootcastId: vipboot-sh4 -o /usr/bin/multicast
+Permanent from metadata (to flash): HttpServer: 192.168.0.5
+Permanent from metadata (to flash): HttpPort: 27747
+Permanent from metadata (to flash): HttpAttempts: 1
+Using HTTP for second phase
+HTTP: Connection attempt 1 of 1
+Request http://192.168.0.5:27747/splash.bmp
+Image version from HTTP: 1
+Could not open /tmp/splash.bmp
+RLE-8 compressed image
+Unable to display a splash image. Skipping splash
+Loading kernel image
+Using Local Storage
+LS: No valid image available
+Using HTTP
+Using HTTP for second phase
+HTTP: Connection attempt 1 of 3
+Request http://192.168.0.5:27747/boot-vip1113-2.6.32.59.sec
+Image version from HTTP: 2.6.32.59
+Unable to open file /tmp/bootimage.gz.sec: No such file or directory
+utilman: Unable to open '/tmp/bootimage.gz.sec'
+Loading kernel image
+Using Local Storage
+LS: No valid image available
+Unable to find a valid boot image. Trying the Golden Image...
+No valid golden image stored in flash.
+Reboot.
+Restarting system.
+Manual soft reset!
+
+System memory: 512 MB
+Using Slot 1
+Unpacking Image ...Done
+Linux version 2.6.32.59_stm24_0211 (<build_user_removed>@<build_host_removed>) (gcc version 4.7.3 20130514 (GCC) ) #1 PREEMPT <timestamp_removed>
+Booting machvec: vip28x3
+KreaTV VIP28x3/VIP11x3 board initialisation
+STxH205/7 version 2.x
+Kernel command line: console=ttyAS0,115200 mtdparts=stm-nand-bch.0:0x00280000@0x00000000(rbl),0x00F00000@0x00280000(boot),0x06E80000@0x01180000(flash) hom=0x42090000 rblmem=0x00091000@0x42000000 bootdevice=nand bootfiles=fs systemmemsize=524288 rbl=2 rbl_mode=1 rbl_version=2.3.1 sw_version=5.4.3 dbl=1 bnb=1024 rootdisk=m:0x00000000@0x00000000 nwhwconf=device:eth0,hwaddr:xx:xx:xx:xx:xx:xx rbl_cap=1 bt=VIP1113-REV1
+Memory: 502144k/524288k available (2004k kernel code, 664k data, 128k init)
+Console: colour dummy device 80x25
+console [ttyAS0] enabled
+CPU: STxH205
+Unpacking initramfs...
+Freeing initrd memory: 3696k freed
+ONFI flash detected
+ONFI param page 0 valid
+NAND device: Manufacturer ID: 0x2c, Chip ID: 0xf1 (Micron MT29F1G08ABAEAH4)
+Creating 3 MTD partitions on "stm-nand-bch.0":
+0x000000000000-0x000000280000 : "rbl"
+0x000000280000-0x000001180000 : "boot"
+0x000001180000-0x000008000000 : "flash"
+Freeing unused kernel memory: 128k freed
+DBL init started
+DBL version STABLE_FIRMWARE_5.4.3@380102 (dailybuild@invergordon) (sh4-kreatv-linux-uclibc-gcc (GCC) 4.7.3 20130514)# Fri Apr 11 13:02:23 CEST 2014
+Mounting tmpfs
+Mounting procfs
+Mounting sysfs
+Mounting FFS
+UBI: attached mtd2 to ubi0
+UBI: background thread "ubi_bgt0d" started, PID 25
+UBIFS: recovery needed
+UBIFS: recovery completed
+UBIFS: mounted UBI device 0, volume 0, name "flash"
+Initializing HAL
+Verifying system integrity...
+System integrity is intact
+Running on ARRIS VIP1113L with KreaTV Firmware version 5.4.3
+Using Vendor Class Id TeliaSonera_VIP1113
+Using Bootcast Id vipboot-sh4 -o /usr/bin/multicast
+Using SAP Id teliasonera.vip1113
+Initializing video
+Entering video active mode
+No valid splash image in local storage
+DVB is NOT available
+RLE-8 compressed image
+Bootcast download protocol registered
+TFTP download protocol registered
+Local Storage download protocol registered
+SAP download protocol registered
+HTTP download protocol registered
+USB download protocol registered
+Bringing up interface eth0
+STMMAC MII Bus: probed
+Reading link status...
+PHY: 0:01 - Link is Up - 100/Full
+-> Link is up
+Link speed: 100Mbps/Full
+Using DHCP
+Total DHCP timeout is 15 seconds
+IP-Config: eth0 hardware address xx:xx:xx:xx:xx:xx mtu 1500 DHCP
+IP-Config: eth0 complete (from 192.168.0.1):
+ address: 192.168.0.75     broadcast: 192.168.0.255    netmask: 255.255.255.0
+Download parameters:
+  Splash boot order: 6136
+  Kernel boot order: 36
+  Bootcast address : viphttp-sh4 -x arris-vip1113 -s 192.168.0.5 -p 27747
+  Sap address      : 224.2.127.254:9875
+  Http address     : 192.168.0.5:27747
+Loading splash image
+Using HTTP
+Requesting HTTP metadata
+HTTP: Connection attempt 1 of 1
+Request http://192.168.0.5:27747/vipboot-sh4
+Unable to open file /tmp/http_metadata.xml: No such file or directory
+Unable to open file /tmp/http_metadata.xml: No such file or directory
+Failed to get splash protocol from metadata file
+Using Bootcast
+--- vipboot called with argv: /usr/bin/multicast -o /tmp/splash.bmp -p bc -a viphttp-sh4 -x arris-vip1113 -s 192.168.0.5 -p 27747 -h vipboot-sh4 -o /usr/bin/multicast -t splash -i 10 -r 1 -v /tmp/splashimage_version -m info
+--- HTTP name set to: viphttp-sh4
+--- XML name set to: arris-vip1113
+--- Server set to: 192.168.0.5:27747
+--- Attaching to PID 1: OK
+--- Applying patch at 0x40ca06: OK
+--- Applying patch at 0x417cfa: OK
+--- Applied 2 patch(es)
+--- Renaming /usr/bin/http to /usr/bin/http.: OK
+--- Downloading viphttp-sh4 to /usr/bin/http:
+    Executing: /usr/bin/http. /usr/bin/http. -h 192.168.0.5 -q 27747 -p viphttp-sh4 -o /usr/bin/http -b arris-vip1113 -f "" -s "" -a "" -1 0.0.0.0
+Request http://192.168.0.5:27747/viphttp-sh4
+    PID 44 exited with status 0
+OK
+--- Downloading arris-vip1113 to /tmp/http_metadata.xml:
+    Executing: /usr/bin/http. /usr/bin/http. -h 192.168.0.5 -q 27747 -p arris-vip1113 -o /tmp/http_metadata.xml -b arris-vip1113 -f "" -s "" -a "" -1 0.0.0.0
+Request http://192.168.0.5:27747/arris-vip1113
+    PID 45 exited with status 0
+OK
+--- vipboot finishing with status code 0
+Child process (/usr/bin/multicast) exited with failure code 1
+BC: Failed
+Using Local Storage
+LS: No valid image available
+Using HTTP
+Using HTTP for second phase
+HTTP: Connection attempt 1 of 1
+--- HTTP BEFORE: /usr/bin/http -n 10 -p splash.bmp -h 192.168.0.5 -q 27747 -o /tmp/splash.bmp -b vipboot-sh4 -o /usr/bin/multicast -f 5.4.3 -s M00000000000 -a xx:xx:xx:xx:xx:xx -v none -w none -1 192.168.0.1 -2 0.0.0.0
+--- HTTP AFTER : /usr/bin/http. -n 10 -p splash.bmp -h 192.168.0.5 -q 27747 -o /tmp/splash.bmp -b vipboot-sh4 -f 5.4.3 -s M00000000000 -a xx:xx:xx:xx:xx:xx -v none -w none -1 192.168.0.1 -2 0.0.0.0
+Request http://192.168.0.5:27747/splash.bmp
+Image version from HTTP: 1
+Unable to open file /flash2/.splashimage: No such file or directory
+Splash image in Local Storage is not up-to-date
+Storing splash image in Local Storage
+RLE-8 compressed image
+Splash is already displayed
+Loading kernel image
+Using Local Storage
+LS: No valid image available
+Using HTTP
+Using HTTP for second phase
+HTTP: Connection attempt 1 of 1
+--- HTTP BEFORE: /usr/bin/http -n 10 -p boot-vip1113-2.6.32.59.sec -h 192.168.0.5 -q 27747 -o /tmp/bootimage.gz.sec -b vipboot-sh4 -o /usr/bin/multicast -f 5.4.3 -s M00000000000 -a xx:xx:xx:xx:xx:xx -v none -w 1 -1 192.168.0.1 -2 0.0.0.0
+--- HTTP AFTER : /usr/bin/http. -n 10 -p boot-vip1113-2.6.32.59.sec -h 192.168.0.5 -q 27747 -o /tmp/bootimage.gz.sec -b vipboot-sh4 -f 5.4.3 -s M00000000000 -a xx:xx:xx:xx:xx:xx -v none -w 1 -1 192.168.0.1 -2 0.0.0.0
+Request http://192.168.0.5:27747/boot-vip1113-2.6.32.59.sec
+Image version from HTTP: 2.6.32.59
+Verifying image...
+Using classical image.
+Kernel image in Local Storage is not up-to-date
+Storing kernel image in Local Storage
+Uncompressing image...
+Loading new kernel...
+Initrd at 0x84e7a000, length 1596929 bytes
+Command line (457 bytes):  console=ttyAS0,115200 mtdparts=stm-nand-bch.0:0x00280000@0x00000000(rbl),0x00F00000@0x00280000(boot),0x06E80000@0x01180000(flash) ip=192.168.0.75::192.168.0.1:255.255.255.0 nwhwconf=device:eth0,hwaddr:xx:xx:xx:xx:xx:xx bnb=1024 rbl=2 rbl_mode=1 rbl_version=2.3.1 dbl=1 bt=VIP1113-REV1 hom=0x42090000 rblmem=0x00091000@0x42000000 bootdevice=nand bootfiles=fs bch=viphttp-sh4 -x arris-vip1113 -s 192.168.0.5 -p 27747 systemmemsize=524288 serverid=192.168.0.1
+Kernel loaded successfully
+Disabling IR...
+Terminating irdecoder process
+Unmounting FFS2...
+UBIFS: un-mount UBI device 0, volume 0
+UBI: mtd2 is detached from ubi0
+Starting new kernel...
+Bringing down interface eth0
+Starting new kernel
+kexec information
+  segment[0]: 0x80600000 - 0x8093f000 (0x0033f000)
+  segment[1]: 0x84e7a000 - 0x85000000 (0x00186000)
+  start     : 0x80601000
+
+Linux version 2.6.32.59_stm24_0211 (<build_user_removed>@<build_host_removed>) (gcc version 4.7.3 20130514 (GCC) ) #1 PREEMPT <timestamp_removed>
+Booting machvec: vip28x3
+KreaTV VIP28x3/VIP11x3 board initialisation
+STxH205/7 version 2.x
+Kernel command line:  console=ttyAS0,115200 mtdparts=stm-nand-bch.0:0x00280000@0x00000000(rbl),0x00F00000@0x00280000(boot),0x06E80000@0x01180000(flash) ip=192.168.0.75::192.168.0.1:255.255.255.0 nwhwconf=device:eth0,hwaddr:xx:xx:xx:xx:xx:xx bnb=1024 rbl=2 rbl_mode=1 rbl_version=2.3.1 dbl=1 bt=VIP1113-REV1 hom=0x42090000 rblmem=0x00091000@0x42000000 bootdevice=nand bootfiles=fs bch=viphttp-sh4 -x arris-vip1113 -s 192.168.0.5 -p 27747 systemmemsize=524288 serverid=192.168.0.1 init=/bin/busybox
+Memory: 416000k/524288k available (2494k kernel code, 695k data, 132k init)
+Console: colour dummy device 80x25
+console [ttyAS0] enabled
+CPU: STxH205
+Unpacking initramfs...
+Freeing initrd memory: 1559k freed
+ONFI flash detected
+ONFI param page 0 valid
+NAND device: Manufacturer ID: 0x2c, Chip ID: 0xf1 (Micron MT29F1G08ABAEAH4)
+Creating 3 MTD partitions on "stm-nand-bch.0":
+0x000000000000-0x000000280000 : "rbl"
+0x000000280000-0x000001180000 : "boot"
+0x000001180000-0x000008000000 : "flash"
+IP-Config: Complete:
+     device=eth0, addr=192.168.0.75, mask=255.255.255.0, gw=192.168.0.1,
+Freeing unused kernel memory: 132k freed
+
+starting pid 22, tty '': '/etc/rc.sysinit'
+starting pid 33, tty '': '/usr/sbin/telnetd'
+starting pid 35, tty '': '/bin/sh'
+
+BusyBox v1.20.2 () built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+/ #

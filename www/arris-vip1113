@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE StbConfig SYSTEM "stbconfig.dtd">
+<StbConfig>
+	<PermanentParams>
+		<SplashOrder>6136</SplashOrder>
+		<BootOrder>36</BootOrder>
+		<Bootcast>viphttp-sh4 -x arris-vip1113 -s 192.168.0.5 -p 27747</Bootcast>
+		<BootcastAttempts>1</BootcastAttempts>
+		<BootcastId>vipboot-sh4 -o /usr/bin/multicast</BootcastId>
+		<HttpServer>192.168.0.5</HttpServer>
+		<HttpPort>27747</HttpPort>
+		<HttpAttempts>1</HttpAttempts>
+	</PermanentParams>
+	<BootParams>
+		<KernelUrl>http://192.168.0.5:27747/boot-vip1113-2.6.32.59.sec</KernelUrl>
+		<KernelVersion>2.6.32.59</KernelVersion>
+		<SplashUrl>http://192.168.0.5:27747/splash.bmp</SplashUrl>
+		<SplashVersion>1</SplashVersion>
+	</BootParams>
+</StbConfig>
