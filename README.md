@@ -4,6 +4,8 @@ A semi-persistent method of booting a custom kernel on Motorola/Arris VIP-series
 
 ## Introduction
 
+<!-- --8<-- [start:introduction] -->
+
 Many older-generation Motorola/Arris TV boxes (VIP1920, VIP1113, VIP4302, VIP5305 to name a few) that run the [KreaTV firmware](https://motorola.dxing.si/kreatvdoc/sdk/home/index.html) have vulnerabilities that allow overwriting system executables with own code. This was initially found and described in [FDEU-CVE-2025-1c00](https://full-disclosure.eu/reports/2025/FDEU-CVE-2025-1c00-arris-bootloader-shell-injection.html) - most of my work here was only possible thanks to [antnks/vip1113](https://github.com/antnks/arris-vip1113).
 
 TL;DR: the firmware uses download parameters modifiable by DHCP or a GUI boot configuration menu. These parameters are used to call `/usr/bin/tftp` or `/usr/bin/http` to download e.g. the kernel image. Injecting a whitespace (and perhaps options such as `-o`) passes them directly to the child process, which makes it behave differently - for example, change the output path to overwrite an existing binary file with a downloaded one.
@@ -16,7 +18,11 @@ As mentioned before, this method is "semi-persistent" - the STB will only boot y
 
 **NOTE:** This has so far only been tested on a VIP1113 device from Telia (Sweden). Certain devices might be incompatible with the HTTP method, despite being otherwise vulnerable (firmware version 3.03 and newer support HTTP).
 
+<!-- --8<-- [end:introduction] -->
+
 **If you manage to use this method successfully on any VIP-series device (incl. VIP1113) - please let me know in the repository's Issues page.**
+
+<!-- --8<-- [start:writeup] -->
 
 ## How to use it?
 
@@ -143,7 +149,7 @@ The last two just mean that firmware won't retry calling `BootCast` and `HTTP` m
 
 The firmware first downloads the splash image (`SplashOrder`), then the kernel image (`BootOrder`). The newly-configured values of `6136` and `36` roughly translate to the sequence described below.
 
-#### Protocol `6` - HTTP
+#### Protocol 6 - HTTP
 
 If we consider the new value of `BootcastId`, `HttpServer` and `HttpPort`, here's how the `/usr/bin/http` call will look like (irrelevant options omitted for brevity):
 
@@ -163,7 +169,7 @@ Putting the pieces together, the program will send a request to `http://192.168.
 
 The call succeeds, so the exit code is 0, but no `/tmp/http_metadata.xml` is present - firmware will continue to the next specified boot protocol.
 
-#### Protocol `1` - BootCast
+#### Protocol 1 - BootCast
 
 This protocol uses the `/usr/bin/multicast` program - the one that was just replaced with a custom binary. As we're still in `SplashOrder`, here's how the call looks like:
 
@@ -214,7 +220,7 @@ What is this program patching?
 
 And what about that HTTP wrapper? You'll see soon.
 
-#### Protocol `3` - Local Storage
+#### Protocol 3 - Local Storage
 
 Mostly self-explanatory - this protocol will check if `/flash2/.splashimage` (or `/flash2/.bootimage`) exists, along with their status. It also reads the `http_metadata.xml` (if it exists). Since the status file (`.splashimage_status` or `.bootimage_status`) contains the version number, it reads that too.
 
@@ -222,7 +228,7 @@ If the status of an image is "OK" and the HTTP metadata version matches the one 
 
 If the image is not "OK", firmware proceeds to the next protocol. However, if the image version is different, it proceeds to protocol `6` immediately (or whatever the `SplashUrl` or `KernelUrl` indicates).
 
-#### Protocol `6` - HTTP
+#### Protocol 6 - HTTP
 
 At this point the device has decided to download a new/updated image from HTTP. Here's the call it makes:
 
@@ -263,9 +269,15 @@ Starting new kernel...
 Linux version 2.6.32.59_stm24_0211 (<build_user_removed>@<build_host_removed>) (gcc version 4.7.3 20130514 (GCC) ) #1 PREEMPT <timestamp_removed>
 ```
 
+<!-- --8<-- [end:writeup] -->
+
 ## Disclaimer
 
+<!-- --8<-- [start:disclaimer] -->
+
 This repository is provided for educational purposes only. The project is not affiliated with Motorola, Arris, KreaTV or Telia. All trademarks, trade names and logos are property of their respective owners. Usage of this program is only permitted on hardware you own and control, on your own risk.
+
+<!-- --8<-- [end:disclaimer] -->
 
 ## License
 
