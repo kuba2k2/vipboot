@@ -252,7 +252,7 @@ Great, so it has correctly extracted `-h`, `-q` and `-p` from the `SplashUrl`. S
 
 This is where the custom HTTP wrapper comes into play. It will loop through the `argv[]` and ignore any `-o` options that might override a previously specified one. Having built a new argument list, it will simply `execv()` into the original binary - (`/usr/bin/http.`).
 
-With this, the splash and kernel images can be downloaded properly. The method succeeds, and just like before - mo more protocols are executed, and the new images can be booted.
+With this, the splash and kernel images can be downloaded properly. The method succeeds, and just like before - no more protocols are executed, and the new images can be booted.
 
 The firmware will also store the images in Local Storage (so that re-downloading of the same data is not necessary) and write their status files.
 
