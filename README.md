@@ -80,6 +80,7 @@ viphttp-sh4
 ## How does it work?
 
 If you've read [antnks/vip1113](https://github.com/antnks/arris-vip1113), you're probably aware of the "boot order" that the firmware uses:
+
 - 1 = BootCast
 - 2 = TFTP
 - 3 = Local Storage
@@ -89,6 +90,7 @@ If you've read [antnks/vip1113](https://github.com/antnks/arris-vip1113), you're
 - 7 = USB
 
 You should also understand the architecture of the VIP-series boxes:
+
 - 1st stage - bootloader - chipset-specific, in the case of VIP1113 it's called "RBL",
 - 2nd stage - "firmware" - common across various boxes, but with different version numbers, sometimes called "DBL",
 - 3rd stage - kernel - built and customized by the ISP/TV provider, downloaded by the firmware and booted using `kexec()`.
@@ -202,11 +204,13 @@ And once again, substituting parameters from our custom metadata:
 ```
 
 The output path is overridden again - but this will never get to the real `multicast` binary (since it doesn't exist anymore...). This is a playground that can be used to pass custom options to our own `vipboot-sh4` binary. There are only four that have any meaning to that program:
+
 - `-a` sets name of the `viphttp-sh4` file (to make it more universal),
 - `-x` sets name of the metadata file (which will actually be used this time),
 - `-s` and `-p` set the HTTP server's address and port.
 
 This is the most important part of the process. `vipboot-sh4` gets executed, and here's what it does:
+
 - uses `ptrace()` to attach to PID 1 (`/init`) and patch its code on runtime (more on that later),
 - renames the real `/usr/bin/http` to `/usr/bin/http.`,
 - downloads a custom wrapper from `viphttp-sh4` to `/usr/bin/http` and sets its mode to 777,
